@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://1b08ctfdpxsa"]
+
+[ext_resource type="Script" uid="uid://bsv5ywqt0n4rr" path="res://level_timer.gd" id="1_ewkn0"]
+
+[node name="level_timer" type="Node2D" unique_id=737270044]
+script = ExtResource("1_ewkn0")
+
+[node name="timerText" type="RichTextLabel" parent="." unique_id=1799261792]
+offset_right = 40.0
+offset_bottom = 40.0

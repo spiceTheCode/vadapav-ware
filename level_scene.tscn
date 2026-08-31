@@ -1,3 +1,83 @@
 [gd_scene format=3 uid="uid://71nqysaouk0q"]
 
+[ext_resource type="Script" uid="uid://c8as3ekmah5f8" path="res://timer_screen.gd" id="1_lwxgr"]
+[ext_resource type="Texture2D" uid="uid://b5p1uk0h5n5fp" path="res://levelbg.jpg" id="2_3mivm"]
+[ext_resource type="Texture2D" uid="uid://bbhy87cl15wd1" path="res://life.png" id="3_3mivm"]
+
 [node name="LevelScene" type="Node2D" unique_id=885127964]
+script = ExtResource("1_lwxgr")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=36551438]
+offset_left = -122.0
+offset_top = -6.0
+offset_right = 1232.0
+offset_bottom = 673.0
+texture = ExtResource("2_3mivm")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Button" type="Button" parent="." unique_id=43724008]
+offset_left = 787.0
+offset_top = 567.0
+offset_right = 1158.0
+offset_bottom = 652.0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 49
+text = "HOME"
+
+[node name="ChilliBox" type="HBoxContainer" parent="." unique_id=2002871524]
+offset_left = 136.0
+offset_top = 166.0
+offset_right = 1027.0
+offset_bottom = 341.0
+
+[node name="chilli" type="TextureRect" parent="ChilliBox" unique_id=2080941248]
+layout_mode = 2
+texture = ExtResource("3_3mivm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="chilli2" type="TextureRect" parent="ChilliBox" unique_id=400062685]
+layout_mode = 2
+texture = ExtResource("3_3mivm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="chilli3" type="TextureRect" parent="ChilliBox" unique_id=609674350]
+layout_mode = 2
+texture = ExtResource("3_3mivm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="chilli4" type="TextureRect" parent="ChilliBox" unique_id=150721480]
+layout_mode = 2
+texture = ExtResource("3_3mivm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="chilli5" type="TextureRect" parent="ChilliBox" unique_id=846336098]
+layout_mode = 2
+texture = ExtResource("3_3mivm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="time" type="RichTextLabel" parent="." unique_id=528823033]
+offset_left = 504.0
+offset_top = 532.0
+offset_right = 585.0
+offset_bottom = 596.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 33
+text = "0.0"
+
+[node name="level" type="RichTextLabel" parent="." unique_id=1658723908]
+offset_left = 428.0
+offset_top = 348.0
+offset_right = 678.0
+offset_bottom = 422.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 52
+text = "Level #"
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dg5nhbc8glxne"]
+
+[ext_resource type="Script" uid="uid://b2d2sm8yag0sa" path="res://node_2d.gd" id="1_8vtwa"]
+[ext_resource type="Texture2D" uid="uid://ds21gotty3680" path="res://bg.jpg" id="2_uah43"]
+[ext_resource type="Texture2D" uid="uid://dsjje026hcy8u" path="res://vadapav-21.png" id="3_wp7ut"]
+
+[node name="TitleScene" type="Node2D" unique_id=718996893]
+script = ExtResource("1_8vtwa")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1419299088]
+offset_left = -260.0
+offset_top = -27.0
+offset_right = 1553.0
+offset_bottom = 663.0
+texture = ExtResource("2_uah43")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=669655213]
+offset_left = -14.0
+offset_top = 158.0
+offset_right = 366.0
+offset_bottom = 704.5
+texture = ExtResource("3_wp7ut")
+expand_mode = 1
+
+[node name="TITLE" type="RichTextLabel" parent="." unique_id=871358491]
+clip_contents = false
+offset_left = 191.0
+offset_top = 130.0
+offset_right = 1040.0
+offset_bottom = 310.0
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 108
+text = "VADAPAV-WARE"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1906488699]
+offset_left = 403.0
+offset_top = 246.0
+offset_right = 725.0
+offset_bottom = 544.0
+alignment = 1
+
+[node name="start" type="Button" parent="VBoxContainer" unique_id=1608070210]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 30
+text = "START"
+
+[node name="SETTING" type="Button" parent="VBoxContainer" unique_id=1597512657]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 30
+text = "SETTING"
+
+[node name="QUIT" type="Button" parent="VBoxContainer" unique_id=1173643796]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 30
+text = "QUIT"
+
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/QUIT" to="." method="_on_quit_pressed"]
