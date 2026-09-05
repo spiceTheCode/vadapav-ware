@@ -19,13 +19,13 @@ func _ready() -> void:
 	
 	if Global.minigames_done<3:
 		Global.minigames_done = Global.minigames_done+1
-		get_tree().change_scene_to_file("res://scenes/minigame_"+str(Global.minigames_done)+".tscn")
+		get_tree().change_scene_to_file("res://minigame_"+str(Global.minigames_done)+".tscn")
 	else:
 		get_tree().change_scene_to_file("res://title_scene.tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	match Global.lives:
 		4:
 			chilli.hide()
@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 			chiliCont.hide()
 	
 	timer.text=str(time);
-	level.text = "Level"+str(Global.minigames_done)
+	level.text = "Levels completed: "+str(Global.minigames_done)
 	
 func Timer(start_time: float):
 	time = start_time

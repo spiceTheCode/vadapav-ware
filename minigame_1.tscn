@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://d0absxys6a53k"]
 
 [ext_resource type="Texture2D" uid="uid://7umbw3rlbfja" path="res://minigameBg.jpg" id="1_2n61g"]
+[ext_resource type="Script" uid="uid://c3n7fog1dc6iw" path="res://minigame_1.gd" id="1_or1ld"]
 [ext_resource type="PackedScene" uid="uid://csuctfloixdav" path="res://player.tscn" id="2_gi7k6"]
 [ext_resource type="Texture2D" uid="uid://4p3gifxbqpds" path="res://VadaAim.png" id="3_0hvi2"]
+[ext_resource type="Script" uid="uid://dn417q21p1ian" path="res://vada.gd" id="3_r6gmb"]
+[ext_resource type="PackedScene" uid="uid://1b08ctfdpxsa" path="res://level_timer.tscn" id="6_jife1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7wsd"]
 size = Vector2(1155, 77)
@@ -58,6 +61,7 @@ _data = {
 }
 
 [node name="minigame_1" type="Node2D" unique_id=1105655710]
+script = ExtResource("1_or1ld")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=653854102]
 repeat_size = Vector2(1000, 0)
@@ -126,6 +130,7 @@ position = Vector2(203, 562)
 
 [node name="Vada" type="Node2D" parent="." unique_id=1701029517]
 position = Vector2(-20, -3)
+script = ExtResource("3_r6gmb")
 metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="Vada" unique_id=1734363656]
@@ -149,6 +154,7 @@ autoplay = &"float"
 
 [node name="Vada2" type="Node2D" parent="." unique_id=359780065]
 position = Vector2(869, 143)
+script = ExtResource("3_r6gmb")
 metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="Vada2" unique_id=904315534]
@@ -172,6 +178,7 @@ autoplay = &"float"
 
 [node name="Vada3" type="Node2D" parent="." unique_id=2077959117]
 position = Vector2(931, 472)
+script = ExtResource("3_r6gmb")
 metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="Vada3" unique_id=2074961730]
@@ -192,3 +199,9 @@ metadata/_edit_use_anchors_ = true
 [node name="animation" type="AnimationPlayer" parent="Vada3" unique_id=594146267]
 libraries/ = SubResource("AnimationLibrary_wh6qq")
 autoplay = &"float"
+
+[node name="level_timer" parent="." unique_id=737270044 instance=ExtResource("6_jife1")]
+
+[connection signal="vada_collected" from="Vada" to="." method="vada_collected"]
+[connection signal="vada_collected" from="Vada2" to="." method="vada_collected"]
+[connection signal="vada_collected" from="Vada3" to="." method="vada_collected"]

@@ -16,15 +16,6 @@ texture = ExtResource("2_3mivm")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="." unique_id=43724008]
-offset_left = 787.0
-offset_top = 567.0
-offset_right = 1158.0
-offset_bottom = 652.0
-theme_override_constants/outline_size = 15
-theme_override_font_sizes/font_size = 49
-text = "HOME"
-
 [node name="ChilliBox" type="HBoxContainer" parent="." unique_id=2002871524]
 offset_left = 136.0
 offset_top = 166.0
@@ -71,13 +62,13 @@ theme_override_font_sizes/normal_font_size = 33
 text = "0.0"
 
 [node name="level" type="RichTextLabel" parent="." unique_id=1658723908]
-offset_left = 428.0
-offset_top = 348.0
-offset_right = 678.0
-offset_bottom = 422.0
+offset_left = 247.0
+offset_top = 363.0
+offset_right = 810.0
+offset_bottom = 437.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 52
-text = "Level #"
+text = "Levels Completed"
+horizontal_alignment = 1
 
 [connection signal="ready" from="." to="." method="_on_ready"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
