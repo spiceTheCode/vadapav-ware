@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://1b08ctfdpxsa" path="res://Scenes/level_timer.tscn" id="6_jife1"]
 [ext_resource type="Texture2D" uid="uid://b8jyaw11maehe" path="res://Assets/Visuals/BadVadaAim.png" id="7_5v7aa"]
 [ext_resource type="Script" uid="uid://chn0iv4flri7i" path="res://Scripts/bad_vadaclick.gd" id="8_j85fr"]
+[ext_resource type="FontFile" uid="uid://cc1jws8qm5jep" path="res://Assets/fonts/Spongeboy Me Bob.ttf" id="9_ne1wf"]
 
 [node name="scene" type="Node2D" unique_id=1134312543]
 script = ExtResource("1_s0dnv")
@@ -113,8 +114,11 @@ offset_top = 259.0
 offset_right = 1146.0
 offset_bottom = 416.0
 theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("9_ne1wf")
 theme_override_font_sizes/normal_font_size = 37
 text = "Only click the non-burnt vadas"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=631080264]
 

@@ -2,6 +2,46 @@
 
 [ext_resource type="Script" uid="uid://yk14w2g0sqm7" path="res://Scripts/winner_scene.gd" id="1_sggwl"]
 [ext_resource type="Texture2D" uid="uid://cljcblqjscjwi" path="res://Assets/Visuals/winnerBg.jpg" id="2_f3pj6"]
+[ext_resource type="FontFile" uid="uid://cc1jws8qm5jep" path="res://Assets/fonts/Spongeboy Me Bob.ttf" id="3_wt8pv"]
+[ext_resource type="Texture2D" uid="uid://cx03iy8csxplq" path="res://Assets/Visuals/winnerVadaPav.png" id="4_ecak1"]
+
+[sub_resource type="Animation" id="Animation_wt8pv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(567, 318)]
+}
+
+[sub_resource type="Animation" id="Animation_ecak1"]
+resource_name = "float"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(567, 318), Vector2(567, 330), Vector2(567, 318)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_huggj"]
+_data = {
+&"RESET": SubResource("Animation_wt8pv"),
+&"float": SubResource("Animation_ecak1")
+}
 
 [node name="winner_scene" type="Node2D" unique_id=2045716772]
 script = ExtResource("1_sggwl")
@@ -18,20 +58,31 @@ expand_mode = 1
 offset_left = 2.0
 offset_top = -2.0
 offset_right = 1151.0
-offset_bottom = 647.0
+offset_bottom = 426.0
 theme_override_constants/outline_size = 35
-theme_override_font_sizes/normal_font_size = 160
+theme_override_fonts/normal_font = ExtResource("3_wt8pv")
+theme_override_font_sizes/normal_font_size = 200
 text = "YOU WON"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="." unique_id=469608996]
-offset_left = 370.0
-offset_top = 469.0
-offset_right = 761.0
-offset_bottom = 590.0
+offset_left = 377.0
+offset_top = 536.0
+offset_right = 750.0
+offset_bottom = 627.0
 theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 44
 text = "Back To Kitchen"
+
+[node name="WinnerVadaPav" type="Sprite2D" parent="." unique_id=1990280554]
+position = Vector2(567, 318)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_ecak1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WinnerVadaPav" unique_id=954650991]
+reset_on_save = false
+libraries/ = SubResource("AnimationLibrary_huggj")
+autoplay = &"float"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

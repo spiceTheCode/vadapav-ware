@@ -8,8 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://4p3gifxbqpds" path="res://Assets/Visuals/VadaAim.png" id="5_u32kt"]
 [ext_resource type="Texture2D" uid="uid://tas4acrjfafm" path="res://Assets/Visuals/vadaPavImpact.png" id="6_38v6o"]
 [ext_resource type="Texture2D" uid="uid://2fwvx3vkbn21" path="res://Assets/Visuals/gotcha.png" id="7_n6gid"]
-[ext_resource type="AudioStream" uid="uid://c654d734omqe2" path="res://Assets/Audio/gotchaSF.mp3" id="8_u32kt"]
-[ext_resource type="AudioStream" uid="uid://nh7embhcblvb" path="res://Assets/Audio/vadapav.mp3" id="9_v84ot"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7wsd"]
 size = Vector2(1155, 77)
@@ -349,12 +347,6 @@ texture = ExtResource("7_n6gid")
 
 [node name="gotchaAnim" type="AnimationPlayer" parent="SIKEART" unique_id=875457522]
 libraries/ = SubResource("AnimationLibrary_38v6o")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SIKEART" unique_id=1074803889]
-stream = ExtResource("8_u32kt")
-
-[node name="vadaPavSound" type="AudioStreamPlayer" parent="." unique_id=662161875]
-stream = ExtResource("9_v84ot")
 
 [connection signal="vada_collected" from="Vada" to="." method="vada_collected"]
 [connection signal="vada_collected" from="Vada2" to="." method="vada_collected"]

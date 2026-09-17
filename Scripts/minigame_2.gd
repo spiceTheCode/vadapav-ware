@@ -2,7 +2,6 @@ extends Node2D
 @onready var level_timer: Node2D= $level_timer
 @onready var anim:AnimationPlayer = $SIKEART/gotchaAnim
 
-@onready var sound:AudioStreamPlayer = $SIKEART/AudioStreamPlayer
 @onready var vadaPavSound:AudioStreamPlayer = $vadaPavSound
 
 
@@ -13,7 +12,7 @@ var timer_end = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await level_timer.Timer(12.0)
+	await level_timer.Timer(14.0)
 	timer_end = true
 
 
@@ -36,7 +35,7 @@ func _process(_delta: float) -> void:
 func vada_collected(who:Node2D) -> void:
 	who.collected = true
 	vada_howmany = vada_howmany+1
-	vadaPavSound.play()
+	GlobalAudio.playSFX(load("res://Assets/Audio/vadapav.mp3"))
 	who.get_child(3).get_child(0).play("vadaPow")
 	
 
@@ -44,7 +43,7 @@ func vada_collected(who:Node2D) -> void:
 func _on_psyche_area_entered(area: Area2D) -> void:
 	if shouldSike:
 		anim.play("gotcha")
-		sound.play()
+		GlobalAudio.playSFX(load("res://Assets/Audio/gotchaSF.mp3"))
 
 
 func _on_deactivate_sike_area_entered(area: Area2D) -> void:

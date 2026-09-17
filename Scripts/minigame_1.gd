@@ -7,7 +7,7 @@ var bad_vada_pressed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await CDtimer.Timer(4.0)
+	await CDtimer.Timer(5.0)
 	timer_end = true
 	pass # Replace with function body.
 

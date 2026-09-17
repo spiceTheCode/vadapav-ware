@@ -17,9 +17,7 @@ func _process(_delta: float) -> void:
 
 func _on_pressed() -> void:
 	hide()
-	vadaAudio.stream = load("res://Assets/Audio/vadaCollection/"+audios.pick_random())
-	vadaAudio.play()
-	if (parent.button_pressed==2):
-		await timer.Timer(2)
+	var currStream = load("res://Assets/Audio/vadaCollection/"+audios.pick_random())
+	GlobalAudio.playSFX(currStream)
 	parent.button_pressed +=1
 	pass # Replace with function body.

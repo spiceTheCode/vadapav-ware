@@ -13,4 +13,5 @@ func _process(_delta: float) -> void:
 
 
 func _on_pressed() -> void:
+	GlobalAudio.playSFX(load("res://Assets/Audio/vadaCollection/eww.mp3"))
 	parent.bad_vada_pressed=true

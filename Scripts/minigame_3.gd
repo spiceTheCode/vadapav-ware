@@ -8,7 +8,7 @@ var timer_end = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await CDTimer.Timer(6.0)
+	await CDTimer.Timer(10.0)
 	timer_end = true
 	pass # Replace with function body.
 
@@ -35,15 +35,18 @@ func _on_open_pav_2_vada_has_been_paved(whoPav:Sprite2D, whoVada:CharacterBody2D
 	whoPav.texture=secondTexture
 	whoVada.hide()
 	productReady+=1
+	GlobalAudio.playSFX(load("res://Assets/Audio/vadapav.mp3"))
 
 
 func _on_open_pav_vada_has_been_paved(whoPav:Sprite2D, whoVada:CharacterBody2D) -> void:
 	whoPav.texture=secondTexture
 	whoVada.hide()
 	productReady+=1
+	GlobalAudio.playSFX(load("res://Assets/Audio/vadapav.mp3"))
 
 
 func _on_open_pav_3_vada_has_been_paved(whoPav:Sprite2D, whoVada:CharacterBody2D) -> void:
 	whoPav.texture=secondTexture
 	whoVada.hide()
 	productReady+=1
+	GlobalAudio.playSFX(load("res://Assets/Audio/vadapav.mp3"))

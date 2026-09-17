@@ -1,13 +1,19 @@
 [gd_scene format=3 uid="uid://1b08ctfdpxsa"]
 
 [ext_resource type="Script" uid="uid://bsv5ywqt0n4rr" path="res://Scripts/level_timer.gd" id="1_ewkn0"]
+[ext_resource type="FontFile" uid="uid://cc1jws8qm5jep" path="res://Assets/fonts/Spongeboy Me Bob.ttf" id="2_0o5jq"]
 
 [node name="level_timer" type="Node2D" unique_id=737270044]
 script = ExtResource("1_ewkn0")
 
 [node name="timerText" type="RichTextLabel" parent="." unique_id=1799261792]
-offset_right = 542.0
-offset_bottom = 288.0
+offset_left = -164.0
+offset_top = -84.0
+offset_right = 378.0
+offset_bottom = 204.0
 theme_override_constants/outline_size = 13
+theme_override_fonts/normal_font = ExtResource("2_0o5jq")
 theme_override_font_sizes/normal_font_size = 83
 text = "time"
+horizontal_alignment = 1
+vertical_alignment = 1
