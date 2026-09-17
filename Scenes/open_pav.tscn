@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bcr33vwfci1hq"]
+
+[ext_resource type="Texture2D" uid="uid://baim23vlklpn7" path="res://Assets/Visuals/pavHolder.png" id="1_34k0f"]
+[ext_resource type="Script" uid="uid://ddfvo2wc4ee12" path="res://Scripts/open_pav.gd" id="1_pahv8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7wsd"]
+radius = 373.341
+
+[node name="openPav" type="CharacterBody2D" unique_id=117801042]
+script = ExtResource("1_pahv8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1222358044]
+scale = Vector2(0.28009263, 0.28255653)
+texture = ExtResource("1_34k0f")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1236331509 groups=["pav"]]
+scale = Vector2(0.28009263, 0.28255653)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1659158526]
+position = Vector2(-49.983475, 155.72104)
+shape = SubResource("CircleShape2D_s7wsd")

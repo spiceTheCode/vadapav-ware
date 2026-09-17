@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://r2lipukaj1l6"]
+
+[ext_resource type="Script" uid="uid://ckodu36uwnawc" path="res://Scripts/minigame_3.gd" id="1_cdg48"]
+[ext_resource type="PackedScene" uid="uid://1b08ctfdpxsa" path="res://Scenes/level_timer.tscn" id="2_5xr8p"]
+[ext_resource type="Texture2D" uid="uid://7umbw3rlbfja" path="res://Assets/Visuals/minigameBg.jpg" id="3_33dbb"]
+[ext_resource type="PackedScene" uid="uid://bcr33vwfci1hq" path="res://Scenes/open_pav.tscn" id="3_cdg48"]
+[ext_resource type="PackedScene" uid="uid://bdar4k7udg6v6" path="res://Scenes/dragVada.tscn" id="5_1i1uu"]
+[ext_resource type="Texture2D" uid="uid://4p3gifxbqpds" path="res://Assets/Visuals/VadaAim.png" id="6_0abbc"]
+[ext_resource type="Texture2D" uid="uid://baim23vlklpn7" path="res://Assets/Visuals/pavHolder.png" id="7_elj0y"]
+
+[node name="minigame_3" type="Node2D" unique_id=1116034549]
+script = ExtResource("1_cdg48")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=565575901]
+offset_left = -43.0
+offset_top = -27.0
+offset_right = 1203.0
+offset_bottom = 735.0
+texture = ExtResource("3_33dbb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="level_timer" parent="." unique_id=737270044 instance=ExtResource("2_5xr8p")]
+position = Vector2(16, -5)
+
+[node name="openPav" parent="." unique_id=117801042 instance=ExtResource("3_cdg48")]
+position = Vector2(1000, 464)
+
+[node name="openPav2" parent="." unique_id=1340538390 instance=ExtResource("3_cdg48")]
+position = Vector2(161, 279)
+
+[node name="openPav3" parent="." unique_id=968597138 instance=ExtResource("3_cdg48")]
+position = Vector2(733, 220)
+
+[node name="dragVada" parent="." unique_id=1722594484 instance=ExtResource("5_1i1uu")]
+position = Vector2(501, 533)
+
+[node name="dragVada2" parent="." unique_id=1252675766 instance=ExtResource("5_1i1uu")]
+position = Vector2(311, 544)
+
+[node name="dragVada3" parent="." unique_id=1277215581 instance=ExtResource("5_1i1uu")]
+position = Vector2(107, 552)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=86085873]
+offset_left = 850.0
+offset_top = 16.0
+offset_right = 1378.0
+offset_bottom = 291.0
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/normal_font_size = 50
+text = "Drag
+Towards"
+
+[node name="VadaAim" type="Sprite2D" parent="." unique_id=536604816]
+position = Vector2(1030, 47.000004)
+scale = Vector2(0.09444445, 0.09166666)
+texture = ExtResource("6_0abbc")
+
+[node name="PavHolder" type="Sprite2D" parent="." unique_id=605025558]
+position = Vector2(1108, 131.00002)
+scale = Vector2(0.07152771, 0.06768334)
+texture = ExtResource("7_elj0y")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=70650715]
+
+[connection signal="vadaHasBeenPaved" from="openPav" to="." method="_on_open_pav_vada_has_been_paved"]
+[connection signal="vadaHasBeenPaved" from="openPav2" to="." method="_on_open_pav_2_vada_has_been_paved"]
+[connection signal="vadaHasBeenPaved" from="openPav3" to="." method="_on_open_pav_3_vada_has_been_paved"]

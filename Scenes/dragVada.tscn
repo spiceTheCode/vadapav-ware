@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bdar4k7udg6v6"]
+
+[ext_resource type="Texture2D" uid="uid://4p3gifxbqpds" path="res://Assets/Visuals/VadaAim.png" id="1_6ql8k"]
+[ext_resource type="Script" uid="uid://bjhc31erjd5g4" path="res://Scripts/drag_vada.gd" id="2_tp0ct"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7wsd"]
+radius = 76.79192
+
+[node name="dragVada" type="CharacterBody2D" unique_id=1722594484]
+script = ExtResource("2_tp0ct")
+
+[node name="vada" type="Sprite2D" parent="." unique_id=609174018]
+scale = Vector2(0.2023148, 0.19490737)
+texture = ExtResource("1_6ql8k")
+
+[node name="Button" type="Button" parent="vada" unique_id=87160221]
+self_modulate = Color(0.63529414, 0, 0.6392157, 0)
+anchors_preset = -1
+anchor_left = 0.16700001
+anchor_top = 0.202
+anchor_right = 0.16700001
+anchor_bottom = 0.202
+offset_left = -560.95496
+offset_top = -561.9131
+offset_right = 205.17795
+offset_bottom = 176.89935
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1852545067 groups=["vada"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=936718793]
+position = Vector2(4, 10)
+shape = SubResource("CircleShape2D_s7wsd")
+
+[connection signal="button_down" from="vada/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="vada/Button" to="." method="_on_button_button_up"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bwccq3p3mhyga"]
+
+[ext_resource type="Script" uid="uid://yk14w2g0sqm7" path="res://Scripts/winner_scene.gd" id="1_sggwl"]
+[ext_resource type="Texture2D" uid="uid://cljcblqjscjwi" path="res://Assets/Visuals/winnerBg.jpg" id="2_f3pj6"]
+
+[node name="winner_scene" type="Node2D" unique_id=2045716772]
+script = ExtResource("1_sggwl")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1633825423]
+offset_left = -55.0
+offset_top = -47.0
+offset_right = 1190.0
+offset_bottom = 692.0
+texture = ExtResource("2_f3pj6")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=325057674]
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 1151.0
+offset_bottom = 647.0
+theme_override_constants/outline_size = 35
+theme_override_font_sizes/normal_font_size = 160
+text = "YOU WON"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=469608996]
+offset_left = 370.0
+offset_top = 469.0
+offset_right = 761.0
+offset_bottom = 590.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 44
+text = "Back To Kitchen"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
