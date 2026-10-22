@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://q54ingbrq1yv"]
+
+[ext_resource type="Script" uid="uid://cdear44r2v7l6" path="res://Scripts/potato_Projectile.gd" id="1_0en4o"]
+[ext_resource type="Texture2D" uid="uid://slhboujhx4r2" path="res://Assets/Visuals/potatoBall.png" id="1_fyqkj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7rlf"]
+radius = 39.051247
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7wsd"]
+radius = 38.327538
+
+[node name="potatoBall" type="CharacterBody2D" unique_id=67969541]
+script = ExtResource("1_0en4o")
+speed = null
+
+[node name="Area2D" type="Area2D" parent="." unique_id=805792604 groups=["potProj"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1300564265]
+shape = SubResource("CircleShape2D_s7rlf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=461548336]
+shape = SubResource("CircleShape2D_s7wsd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1334337213]
+position = Vector2(5.9999995, 6)
+scale = Vector2(0.3532197, 0.39053267)
+texture = ExtResource("1_fyqkj")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

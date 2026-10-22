@@ -2,7 +2,6 @@ extends Node2D
 @onready var level_timer: Node2D= $level_timer
 @onready var anim:AnimationPlayer = $SIKEART/gotchaAnim
 
-@onready var vadaPavSound:AudioStreamPlayer = $vadaPavSound
 
 
 

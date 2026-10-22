@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://xn7ykchs367h"]
+
+[ext_resource type="Texture2D" uid="uid://b286iv0si77mk" path="res://Assets/cutscenes/cs1/street.jpg" id="1_jbtci"]
+
+[node name="first cutscene" type="Node2D" unique_id=1834061116]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1524415982]
+offset_left = 1.0
+offset_top = -101.0
+offset_right = 1160.0
+offset_bottom = 676.0
+texture = ExtResource("1_jbtci")
+expand_mode = 1
+
+[node name="samosaDon" type="Sprite2D" parent="." unique_id=1683673669]
+position = Vector2(1, -101)
+
+[node name="childVada" type="Sprite2D" parent="." unique_id=1428070238]

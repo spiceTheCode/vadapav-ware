@@ -326,7 +326,8 @@ offset = Vector2(500, 500)
 libraries/ = SubResource("AnimationLibrary_38v6o")
 
 [node name="level_timer" parent="." unique_id=737270044 instance=ExtResource("2_2425y")]
-position = Vector2(39, 332)
+visible = false
+position = Vector2(22, 323)
 
 [node name="psyche!" type="Area2D" parent="." unique_id=1290786374]
 
